@@ -37,7 +37,7 @@ public class UserRepositoryImpl implements UserRepository {
     final String SQL_STR = "insert into user_schema.users (firstName, lastName, phoneNumber, password)"
         + " values (?, ?, ?, ?)";
     jdbcTemplate.update(SQL_STR,
-        entity.getFirstName(), entity.getSecondName(), entity.getPhoneNumber(), entity.getPassword());
+        entity.getFirstName(), entity.getLastName(), entity.getPhoneNumber(), entity.getPassword());
   }
 
   @Override

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("application.properties")
+@PropertySource("WEB-INF/application.properties")
 @ComponentScan (basePackages = {
     "edu.school21.cinema.services", "edu.school21.cinema.repositories"})
 public class Config {

@@ -5,17 +5,17 @@ import java.util.Objects;
 public class User {
   private Long id;
   private String firstName;
-  private String secondName;
+  private String lastName;
   private String phoneNumber;
   private String password;
 
   public User() {
   }
 
-  public User(Long id, String firstName, String secondName, String phoneNumber) {
+  public User(Long id, String firstName, String lastName, String phoneNumber) {
     this.id = id;
     this.firstName = firstName;
-    this.secondName = secondName;
+    this.lastName = lastName;
     this.phoneNumber = phoneNumber;
   }
 
@@ -35,12 +35,12 @@ public class User {
     this.firstName = firstName;
   }
 
-  public String getSecondName() {
-    return secondName;
+  public String getLastName() {
+    return lastName;
   }
 
-  public void setSecondName(String secondName) {
-    this.secondName = secondName;
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
   public String getPhoneNumber() {
@@ -64,7 +64,7 @@ public class User {
     return "User{\n" +
         "\tid=" + id +
         ",\n\tfirstName='" + firstName + '\'' +
-        ",\n\tsecondName='" + secondName + '\'' +
+        ",\n\tlastName='" + lastName + '\'' +
         ",\n\tphoneNumber='" + phoneNumber + '\'' +
         ",\n\tpassword='" + password + '\'' +
         "\n}";
@@ -79,12 +79,12 @@ public class User {
       return false;
     }
     User user = (User) o;
-    return id.equals(user.id) && firstName.equals(user.firstName) && secondName.equals(
-        user.secondName) && phoneNumber.equals(user.phoneNumber) && password.equals(user.password);
+    return id.equals(user.id) && firstName.equals(user.firstName) && lastName.equals(
+        user.lastName) && phoneNumber.equals(user.phoneNumber) && password.equals(user.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, secondName, phoneNumber, password);
+    return Objects.hash(id, firstName, lastName, phoneNumber, password);
   }
 }
