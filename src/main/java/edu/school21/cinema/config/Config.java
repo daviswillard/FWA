@@ -8,11 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @PropertySource("WEB-INF/application.properties")
-@ComponentScan (basePackages = {
-    "edu.school21.cinema.services", "edu.school21.cinema.repositories"})
+@ComponentScan (basePackages = "edu.school21.cinema")
 public class Config {
 
   @Autowired
@@ -28,6 +29,11 @@ public class Config {
     dataSource.setDriverClassName(env.getProperty("db.driver.name"));
 
     return dataSource;
+  }
+
+  @Bean
+  public PasswordEncoder encoder() {
+    return new BCryptPasswordEncoder();
   }
 
 }
