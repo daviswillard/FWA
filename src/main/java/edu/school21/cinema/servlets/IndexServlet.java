@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/", name = "index")
 public class IndexServlet extends HttpServlet {
   //placeholder
-  private static String index = "/WEB-INF/index.jsp";
+  private static String index = "/WEB-INF/jsp/index.jsp";
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse res)

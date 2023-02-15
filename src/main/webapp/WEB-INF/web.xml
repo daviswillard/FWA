@@ -57,8 +57,7 @@
   -->
 
 <!--  <context-param>
-    <param-name>dbProperties</param-name>
-    <param-value>${catalina.home}/conf/application.properties</param-value>
+
   </context-param>-->
 
   <welcome-file-list>
