@@ -56,9 +56,10 @@
     http://wiki.metawerx.net/wiki/Web.xml
   -->
 
-<!--  <context-param>
-
-  </context-param>-->
+  <context-param>
+    <param-name>myProperties</param-name>
+    <param-value>${catalina.home}/application.properties</param-value>
+  </context-param>
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

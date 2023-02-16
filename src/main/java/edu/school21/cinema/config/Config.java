@@ -12,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@PropertySource("WEB-INF/application.properties")
+@PropertySource("file:${myProperties}") //"WEB-INF/application.properties"
 @ComponentScan (basePackages = "edu.school21.cinema")
 public class Config {
 

@@ -1,8 +1,11 @@
 package edu.school21.cinema.servlets;
 
 
-import java.io.BufferedWriter;
+
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -22,8 +25,13 @@ public class SignUpServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
-    response.setContentType("text/html");
-    BufferedWriter bufferedWriter = new BufferedWriter(response.getWriter());
+    ServletContext app = getServletContext();
+
+    response.setContentType("text/html; charset=UTF-8");
+    PrintWriter writer = new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
+        StandardCharsets.UTF_8), true);
+    String filepath = app.getRealPath("WEB-INF/html/registration.html");
+    UtilsServlet.fileWork(writer, filepath);
   }
 
   @Override
