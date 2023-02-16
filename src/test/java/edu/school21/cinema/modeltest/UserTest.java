@@ -1,7 +1,7 @@
 package edu.school21.cinema.modeltest;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -9,9 +9,9 @@ import edu.school21.cinema.models.User;
 import edu.school21.cinema.repositories.UserRepositoryImpl;
 import java.sql.Connection;
 import java.sql.SQLException;
+import javax.sql.DataSource;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import javax.sql.DataSource;
 
 public class UserTest {
 
