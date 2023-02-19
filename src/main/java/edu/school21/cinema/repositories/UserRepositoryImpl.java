@@ -36,6 +36,7 @@ public class UserRepositoryImpl implements UserRepository {
   public void save(User entity) {
     final String SQL_STR = "insert into user_schema.users (firstName, lastName, phoneNumber, password)"
         + " values (?, ?, ?, ?)";
+
     jdbcTemplate.update(SQL_STR,
         entity.getFirstName(), entity.getLastName(), entity.getPhoneNumber(), entity.getPassword());
   }

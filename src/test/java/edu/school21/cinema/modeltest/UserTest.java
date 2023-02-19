@@ -20,8 +20,7 @@ public class UserTest {
 
   @Test
   public void testUser() {
-    User user = new User(0L, "Kamil", "Zinatullin", "88005553535");
-    user.setPassword("SuP3p_p@ssword");
+    User user = new User(0L, "Kamil", "Zinatullin", "88005553535", "SuP3p_p@ssword");
     System.out.println(user);
   }
 
@@ -47,8 +46,7 @@ public class UserTest {
 
   @Test
   public void testCreateAndRead() {
-    User user = new User(1L, "Kamil", "Zinatullin", "88005553535");
-    user.setPassword("SuP3p_p@ssword");
+    User user = new User(1L, "Kamil", "Zinatullin", "88005553535","SuP3p_p@ssword");
 
     repository.save(user);
     assertEquals(user, repository.findById(1L));

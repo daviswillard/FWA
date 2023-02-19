@@ -12,11 +12,19 @@ public class User {
   public User() {
   }
 
-  public User(Long id, String firstName, String lastName, String phoneNumber) {
+  public User(Long id, String firstName, String lastName, String phoneNumber, String password) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
+    this.password = password;
+  }
+
+  public User(String firstName, String lastName, String phoneNumber, String password) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
+    this.password = password;
   }
 
   public Long getId() {
@@ -79,8 +87,8 @@ public class User {
       return false;
     }
     User user = (User) o;
-    return id.equals(user.id) && firstName.equals(user.firstName) && lastName.equals(
-        user.lastName) && phoneNumber.equals(user.phoneNumber) && password.equals(user.password);
+    return firstName.equals(user.firstName) && lastName.equals(
+        user.lastName) && phoneNumber.equals(user.phoneNumber);
   }
 
   @Override

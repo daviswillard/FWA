@@ -4,10 +4,6 @@ package edu.school21.cinema.servlets;
 
 import edu.school21.cinema.services.UserService;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +16,7 @@ public class SignUpServlet extends HttpServlet {
   private UserService service;
 
   @Override
-  public void init() throws ServletException {
+  public void init() {
     ApplicationContext springContext =
         (ApplicationContext) getServletContext().getAttribute("springContext");
     service = springContext.getBean(UserService.class);
@@ -33,7 +29,13 @@ public class SignUpServlet extends HttpServlet {
   }
 
   @Override
-  protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-
+  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+      throws IOException, ServletException {
+    request.setCharacterEncoding("UTF-8");
+    if (service.SignUp(request)) {
+      response.sendRedirect("/signIn");
+    } else {
+      doGet(request, response);
+    }
   }
 }

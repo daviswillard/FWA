@@ -52,7 +52,7 @@
   <!-- Filters (for later) -->
   <filter>
     <filter-name>IndexFilter</filter-name>
-    <filter-class>edu.school21.cinema.filters.AllFilter</filter-class>
+    <filter-class>edu.school21.cinema.filters.RootFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>IndexFilter</filter-name>

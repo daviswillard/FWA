@@ -17,6 +17,6 @@
 </head>
 <body>
 <h1>404 Forbidden</h1>
-<p>No such page</p>
+<p>Something went terribly wrong</p>
 </body>
 </html>

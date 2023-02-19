@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebFilter(filterName = "IndexFilter")
-public class AllFilter implements Filter {
+public class RootFilter implements Filter {
 
   @Override
   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
