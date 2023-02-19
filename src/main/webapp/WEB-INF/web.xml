@@ -37,6 +37,8 @@
     <url-pattern>/signIn</url-pattern>
   </servlet-mapping>
 
+  <!-- This is our front page. Index even-->
+
   <servlet>
     <servlet-name>index</servlet-name>
     <servlet-class>edu.school21.cinema.servlets.IndexServlet</servlet-class>
@@ -46,8 +48,21 @@
     <url-pattern>/index</url-pattern>
   </servlet-mapping>
 
+  <!-- This servlet processes POST and GET requests for profile-->
+  <servlet>
+    <servlet-name>profile</servlet-name>
+    <servlet-class>edu.school21.cinema.servlets.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>profile</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
+
 
   <!-- Listeners (for later) -->
+  <listener>
+    <listener-class>edu.school21.cinema.listeners.ContextListener</listener-class>
+  </listener>
 
   <!-- Filters (for later) -->
   <filter>

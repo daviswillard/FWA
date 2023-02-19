@@ -21,7 +21,6 @@ public class RootFilter implements Filter {
     HttpServletResponse response = (HttpServletResponse) servletResponse;
 
     String url = request.getRequestURI();
-    System.out.println(url);
     if (url.equals("/")) {
       User user = (User) request.getSession().getAttribute("user");
 

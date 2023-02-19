@@ -23,6 +23,9 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public Optional<User> SignIn(String phoneNumber, String password) {
+    if (phoneNumber.isEmpty()) {
+      return Optional.empty();
+    }
     Optional<User> result = userRepository.findByNumber(phoneNumber);
     if (result.isPresent()) {
       if (encoder.matches(password, result.get().getPassword())) {
