@@ -3,6 +3,7 @@ package edu.school21.cinema.config;
 import com.zaxxer.hikari.HikariDataSource;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,21 +13,35 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@PropertySource("file:${myProperties}") //"WEB-INF/application.properties"
+//@PropertySource("/WEB-INF/application.properties") //"WEB-INF/application.properties"
+@PropertySource("classpath:application.properties")
 @ComponentScan (basePackages = "edu.school21.cinema")
 public class Config {
 
-  @Autowired
-  private Environment env;
+//  @Autowired
+//  private Environment env;
+
+  @Value("${db.url}")
+  private String url;
+
+  @Value("${db.user}")
+  private String dbUser;
+
+  @Value("${db.password}")
+  private String dbPassword;
+
+  @Value("${db.driver.name}")
+  private String dbDriver;
+
 
   @Bean
   DataSource dataSource() {
     HikariDataSource dataSource = new HikariDataSource();
 
-    dataSource.setJdbcUrl(env.getProperty("db.url"));
-    dataSource.setUsername(env.getProperty("db.user"));
-    dataSource.setPassword(env.getProperty("db.password"));
-    dataSource.setDriverClassName(env.getProperty("db.driver.name"));
+    dataSource.setJdbcUrl(url);
+    dataSource.setUsername(dbUser);
+    dataSource.setPassword(dbPassword);
+    dataSource.setDriverClassName(dbDriver);
 
     return dataSource;
   }

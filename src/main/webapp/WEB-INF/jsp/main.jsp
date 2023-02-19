@@ -1,0 +1,90 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: kamil
+  Date: 17.02.2023
+  Time: 19:45
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FWA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #C882FF;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      background-image: url("/images/shape.svg");
+      background-position: center;
+      background-size: 90%;
+      background-repeat: no-repeat;
+    }
+    header {
+      height: 30px;
+      margin: 30px 60px;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+    }
+    main {
+      height: 600px;
+      display: flex;
+      justify-content: center;
+    }
+    footer {
+      height: 30px;
+      display: flex;
+      margin: 30px 60px;
+      align-items: center;
+      justify-content: left;
+    }
+    .menu {
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+    }
+    .menu_link {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      color: #DAFF7D;
+    }
+    .title {
+      color: #4B55F5;
+      font-weight: bold;
+      font-size: 100px;
+      margin: auto;
+    }
+    .info {
+      width: 370px;
+      display: flex;
+      justify-content: space-between;
+      color: #DAFF7D;
+      font-weight: normal;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav><ul class="menu">
+    <li><a href="/signIn" class="menu_link">Bойти</a></li>
+    <li><a href="/signUp" class="menu_link">Зарегистрироваться</a></li>
+  </ul></nav>
+</header>
+<main>
+  <h1 class="title">FWA</h1>
+</main>
+<footer class="info">
+  <p>2023</p>
+  <p>Камиль Зинатуллин</p>
+  <p>Юлия Куликова</p>
+</footer>
+</body>
+</html>
