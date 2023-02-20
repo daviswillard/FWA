@@ -31,8 +31,8 @@
       </c:otherwise>
     </c:choose>
     <form method="post" action="/profile" enctype="multipart/form-data">
-      <input type="file" name="file" style="display:none;" />
-      <button id="button" name="button" value="Upload" onclick="submit()">Upload</button>
+      <input class="button" type="file" name="file">
+      <input class="button" type="submit" value="Загрузить изображение">
     </form>
   </div>
 

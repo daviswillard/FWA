@@ -13,7 +13,7 @@ create table user_schema.users(
 create table user_schema.images(
     owner integer references user_schema.users(id) not null,
     realName varchar(50) not null,
-    uniqueName varchar(50) not null,
+    uniqueName varchar(100) not null,
     mime varchar(50) not null,
     size integer not null
 );
