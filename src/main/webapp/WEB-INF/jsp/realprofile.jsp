@@ -17,11 +17,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
 </head>
-<script>
-  function thisFileUpload() {
-    document.getElementById("file").click();
-  }
-</script>
 <body>
 <h1 class="title">Мой профиль</h1>
 <div class="content">
@@ -35,9 +30,9 @@
         src="/"/>
       </c:otherwise>
     </c:choose>
-    <form method="post" action="/profile">
-      <input type="file" id="file" style="display:none;" />
-      <button id="button" name="button" value="Upload" onclick="thisFileUpload();">Upload</button>
+    <form method="post" action="/profile" enctype="multipart/form-data">
+      <input type="file" name="file" style="display:none;" />
+      <button id="button" name="button" value="Upload" onclick="submit()">Upload</button>
     </form>
   </div>
 
