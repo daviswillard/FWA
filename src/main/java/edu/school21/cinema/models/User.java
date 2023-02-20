@@ -1,5 +1,6 @@
 package edu.school21.cinema.models;
 
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -8,6 +9,24 @@ public class User {
   private String lastName;
   private String phoneNumber;
   private String password;
+  private List<Image> images;
+  private List<Login> logins;
+
+  public void setImages(List<Image> images) {
+    this.images = images;
+  }
+
+  public void setLogins(List<Login> logins) {
+    this.logins = logins;
+  }
+
+  public List<Image> getImages() {
+    return images;
+  }
+
+  public List<Login> getLogins() {
+    return logins;
+  }
 
   public User() {
   }
@@ -25,6 +44,17 @@ public class User {
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
     this.password = password;
+  }
+
+  public User(Long id, String firstName, String lastName, String phoneNumber, String password,
+      List<Image> images, List<Login> logins) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
+    this.password = password;
+    this.images = images;
+    this.logins = logins;
   }
 
   public Long getId() {

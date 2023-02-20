@@ -33,6 +33,9 @@ public class Config {
   @Value("${db.driver.name}")
   private String dbDriver;
 
+  @Value("${storage.path}")
+  private String path;
+
 
   @Bean
   DataSource dataSource() {
@@ -49,6 +52,11 @@ public class Config {
   @Bean
   public PasswordEncoder encoder() {
     return new BCryptPasswordEncoder();
+  }
+
+  @Bean
+  public String path() {
+    return this.path;
   }
 
 }
